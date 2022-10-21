@@ -1,0 +1,261 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    width: 100%;
+    min-width: 595px;
+}
+
+#output{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;   
+}
+
+#KyivWeather{
+    width: 100%;
+    /* height: 377px; */
+    background: -moz-radial-gradient(center, ellipse cover, #6195ed, #ffcfcf);
+    background: -webkit-linear-gradient(top, #6195ed, #ffcfcf);
+    background: -o-linear-gradient(top, #6195ed, #ffcfcf);
+    background: -ms-linear-gradient(top, #6195ed, #ffcfcf);
+    display: flex; 
+    flex-direction: row;
+}
+
+#ParmaWeather{ 
+    width: 100%;
+    /* height: 377px; */
+    background: -moz-radial-gradient(center, ellipse cover, #6195ed, #ffcfcf);
+    background: -webkit-linear-gradient(bottom, #6195ed, #ffcfcf);
+    background: -o-linear-gradient(bottom, #6195ed, #ffcfcf);
+    background: -ms-linear-gradient(bottom, #6195ed, #ffcfcf);
+    display: flex; 
+    flex-direction: row;
+}
+
+#AmsterdamWeather{
+    width: 100%;
+    /* height: 377px; */
+    background: -moz-radial-gradient(center, ellipse cover, #6195ed, #ffcfcf);
+    background: -webkit-linear-gradient(top, #6195ed, #ffcfcf);
+    background: -o-linear-gradient(top, #6195ed, #ffcfcf);
+    background: -ms-linear-gradient(top, #6195ed, #ffcfcf);
+    display: flex;
+    flex-direction: row;  
+}  
+
+.divForP1{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.divForIndicators{
+    width: 40%;
+   
+}
+
+.divForImage{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.divDate{
+    width: 100%;
+    height: 17px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.inDivForIndicators{
+    width: 100%;
+    height: 234.5px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p1{
+    color: white;
+    font-size: 62px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.img{
+    height: 234px;
+    width: 234px;
+}
+
+.radioInput{
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+}
+
+.p2{
+    font-family: cursive;
+    font-size: 31px;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.p3{
+    font-family: cursive;
+    font-size: 19px;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.btnWeather{
+    font-family: cursive;
+    width: 63px;
+    height: 25px;
+    font-size: 16px;
+    background-color: rgba(255, 207, 207, 40%);
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 10%;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.btnWeather:hover{
+    width: 75px;
+    height: 31px;
+    background-color: rgb(255, 207, 207);
+    margin-top: 10px;
+    padding: 0;
+}
+
+
+
+
+table{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1mm ridge rgba(255, 207, 207, 15%);
+}
+
+td{
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: cursive;
+    font-size: 12px;
+}
+
+tr{
+    width: 40%;
+    margin: 0;
+    padding: 0;
+}
+
+.divForForecastBtn{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parCity{
+    font-family: cursive;
+    font-size: 44px;
+    color: white;
+}
+
+.btnForecastWeather{
+    font-family: cursive;
+    width: 63px;
+    height: 25px;
+    font-size: 16px;
+    background-color: rgba(255, 207, 207, 40%);
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 10%;
+    cursor: pointer;
+    margin-top: -34px;
+}
+
+.btnForecastWeather:hover{
+    width: 75px;
+    height: 31px;
+    background-color: rgb(255, 207, 207);
+    margin-top: -40px;
+    padding: 0;
+}
+
+.radioBtn{
+    padding: 0;
+    width: 11px;
+    height: 11px;
+    cursor: pointer;
+}
+
+.imgForecast{
+    margin: 0;
+    padding: 0;
+    height: 43px;
+}
+
+@media (max-width: 1200px){
+    .p1{
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 840px){
+    .p1{
+        font-size: 40px;
+    }
+    .img{
+        height: 180px;
+    width: 180px;
+    }
+    .parCity{
+        font-size: 30px;
+    }
+    
+    table{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    td{
+        margin-left: 100px;
+        width: 65px;
+        font-size: 10px;
+    }
+    
+    tr{
+        margin-left: 100px;
+        width: 60%;
+    }
+}
+

@@ -21,7 +21,6 @@ class Weather {
     }
 
     curWeather() {
-        // console.log(this);
         let data = {};
         //используем XMLHttpRequest для того чтобы сделать синхронные запросы
         let xhr = new XMLHttpRequest();
@@ -41,7 +40,6 @@ class Weather {
         }
         data.main.kelvin = JSON.parse(xhr.responseText).main.temp;
 
-        //добавляем фаренгейты в дату
         xhr.open("GET", `${this.weatherUrl}&units=imperial`, false);
         try {
             xhr.send();
@@ -53,25 +51,12 @@ class Weather {
           
     }
 
-        // let temp = {}
-        // fetch(this.url)
-        //     .then(response => response.json())
-        //     .then(json => {
-        //         temp.kelvin = json.main.temp
-        //         temp.imperial = json.main.temp
-        //         temp.celcium = json.main.temp
-        //         console.log(temp)
-        //         renderCurObj(json)
-        // })
-    // }
-
     renderCurObj(obj) {
         
         let output = document.querySelector('#output');
 
         let mainDiv = document.createElement("div");
         mainDiv.setAttribute('id', `${obj.name}Weather`);
-        // console.log(mainDiv) 
 
         let inDivForIndicators = document.createElement("div");
         inDivForIndicators.setAttribute('class', `inDivForIndicators`);
@@ -134,7 +119,6 @@ class Weather {
         divForIndicators.append(divDate, inDivForIndicators);
         divForImage.append(img);
 
-        // console.log(document.querySelector('#output').children)
         let mainForecastDiv=document.querySelector(`#${obj.name}Weather`)
         if (!mainForecastDiv) {
             output.append(mainDiv);
@@ -145,10 +129,6 @@ class Weather {
 
             let Forecastsasd = new Forecast(eval(`url${obj.name}Current`), eval(`url${obj.name}Forecast`));
             Forecastsasd.forecastWeather(obj.name)
-            // let ParmaForecast = new Forecast(urlParmaCurrent, urlParmaForecast);
-            // let AmsterdamForecast = new Forecast(urlAmsterdamCurrent, urlAmsterdamForecast);
-            // ParmaForecast.forecastWeather('Parma')
-            // AmsterdamForecast.forecastWeather('Amsterdam')
         }
 
         divRadioButton.addEventListener("click", function () {
@@ -183,7 +163,6 @@ class Forecast extends Weather {
     }
 
     forecastWeather(city) {
-        console.log('asd')
         const qwe = () => {
             let data = {};
             let xhr = new XMLHttpRequest();
@@ -192,8 +171,6 @@ class Forecast extends Weather {
             xhr.send();
             
             data = JSON.parse(xhr.responseText);
-            
-            console.log(data);
 
             xhr.open("GET", `${this.url}`, false);
             xhr.send();
@@ -208,50 +185,18 @@ class Forecast extends Weather {
             })
             this.renderForecastObj(data);
 
-            // document.querySelector(`#switchButton${city}`).removeEventListener("click", qwe);
         }
 
         document.querySelector(`#switchButton${city}`).addEventListener("click", qwe);
     }
 
-    // document.querySelector("#switchButton1").addEventListener("click", () => {
-    //     let urls = [
-    //         "http://api.openweathermap.org/data/2.5/forecast?id=703448&appid=bf35cac91880cb98375230fb443a116f",
-    //         "http://api.openweathermap.org/data/2.5/forecast?id=703448&appid=bf35cac91880cb98375230fb443a116f&units=metric",
-
-    //         "http://api.openweathermap.org/data/2.5/forecast?id=703448&appid=bf35cac91880cb98375230fb443a116f&units=imperial"
-    //     ];
-    //     const temp = []
-    //     console.log(temp)
-    //     let promises = urls.map(url => fetch(url))
-    //     Promise.allSettled(promises)
-    //         .then(results => results.forEach(result => result.value.json()
-    //             .then(res => {
-    //                 temp.push(res)
-    //                 renderForeObj(res)
-    //             })))
-    // });
-
-
-    // document.querySelector("#switchButton1").addEventListener("click", () => {
-    //     // function KievForeWeather() {
-    //     fetch(this.url)
-    //         .then(response => response.json())
-    //         .then(json => this.renderForeObj(json))
-    //         .catch(er => console.log(er))
-    //     // }
-    // });
-
     renderForecastObj(obj) {
-        // console.log('render forecast');
         let mainForecastDiv=document.querySelector(`#${obj.city.name}Weather`)
-        console.log(mainForecastDiv)
         
         let divForForecastBtn = document.createElement("div");
         divForForecastBtn.setAttribute("class", "divForForecastBtn")
         let btnWeather = document.querySelector(`#switchButton${obj.city.name}`);
         btnWeather.setAttribute("class", "btnForecastWeather")
-        // console.log(btnWeather);
         let p4 = document.createElement("p");
         p4.classList.add('parCity')
         let table = document.createElement("table")
@@ -268,10 +213,7 @@ class Forecast extends Weather {
             const elem = obj.list[i];
             let pattern = /[0][0]:[0][0]:[0][0]/;
             if (pattern.test(elem.dt_txt) == true) {
-                // if(elem.dt_txt.indexOf('00:00:00')){
-                // console.log(elem.main.temp);
                 let string = `<img class="imgForecast" src="https://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png">`;
-                // string.setAttribute("class", "imgForecast");
 
                 let radioFirst = document.createElement("input");
                 radioFirst.classList.add('first');
@@ -312,23 +254,8 @@ class Forecast extends Weather {
 
         btnWeather.addEventListener('click', this.curWeather.bind(this)); 
         
-       
-        // btnWeather.addEventListener('click', function(){
-        // let mainWeatherDiv=document.querySelector(`#${obj.city.name}Weather`)
-        // mainWeatherDiv.innerHTML="";
-        // this.curWeather.bind(this)
-        // }); 
     }
     
-    // ABC(obj){
-    //     btn=document.querySelector(`#switchButton${obj.city.name}`);
-    //     console.log(btn)
-    // btn.addEventListener('click', function(){
-    //     let mainWeatherDiv=document.querySelector(`#${obj.city.name}Weather`)
-    //     mainWeatherDiv.innerHTML="";
-    //     this.curWeather.bind(this)
-    // }); 
-    // }
 }
 
 let KyivForecast = new Forecast(urlKyivCurrent, urlKyivForecast);

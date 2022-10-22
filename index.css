@@ -55,8 +55,7 @@ body{
 }
 
 .divForIndicators{
-    width: 40%;
-   
+    width: 40%; 
 }
 
 .divForImage{
@@ -144,9 +143,6 @@ body{
     margin-top: 10px;
     padding: 0;
 }
-
-
-
 
 table{
     width: 100%;

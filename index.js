@@ -1,17 +1,17 @@
 
-let urlKyivCurrent = "http://api.openweathermap.org/data/2.5/weather?id=703448&appid=bf35cac91880cb98375230fb443a116f";
+let urlKyivCurrent = "https://api.openweathermap.org/data/2.5/weather?id=703448&appid=bf35cac91880cb98375230fb443a116f";
 
-let urlParmaCurrent = "http://api.openweathermap.org/data/2.5/weather?id=6540120&appid=4d7100652708bb54cdf7ac53f4989231";
+let urlParmaCurrent = "https://api.openweathermap.org/data/2.5/weather?id=6540120&appid=4d7100652708bb54cdf7ac53f4989231";
 
-let urlAmsterdamCurrent = "http://api.openweathermap.org/data/2.5/weather?id=2759794&appid=4d7100652708bb54cdf7ac53f4989231";
+let urlAmsterdamCurrent = "https://api.openweathermap.org/data/2.5/weather?id=2759794&appid=4d7100652708bb54cdf7ac53f4989231";
 
 
 
-let urlKyivForecast = "http://api.openweathermap.org/data/2.5/forecast?id=703448&appid=bf35cac91880cb98375230fb443a116f";
+let urlKyivForecast = "https://api.openweathermap.org/data/2.5/forecast?id=703448&appid=bf35cac91880cb98375230fb443a116f";
 
-let urlParmaForecast = "http://api.openweathermap.org/data/2.5/forecast?id=6540120&appid=4d7100652708bb54cdf7ac53f4989231";
+let urlParmaForecast = "https://api.openweathermap.org/data/2.5/forecast?id=6540120&appid=4d7100652708bb54cdf7ac53f4989231";
 
-let urlAmsterdamForecast = "http://api.openweathermap.org/data/2.5/forecast?id=2759794&appid=4d7100652708bb54cdf7ac53f4989231";
+let urlAmsterdamForecast = "https://api.openweathermap.org/data/2.5/forecast?id=2759794&appid=4d7100652708bb54cdf7ac53f4989231";
 
 let date = new Date();//dt+000
 
